@@ -18,7 +18,11 @@ public class Test {
 		dao.addClient(c1);
 		dao.addClient(c2);
 		SortedSet<Client> cs=dao.getClients();
+		
+		
 		cs.tailSet(c2);
+		cs.subSet(c1, c2);
+		
 		
 		for(int i=1;i<20;i++)
 			dao.addClient(i, "nom"+i, "adresse"+i);
