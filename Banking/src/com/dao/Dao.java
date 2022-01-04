@@ -11,7 +11,9 @@ import java.util.TreeSet;
 
 import com.model.Client;
 import com.model.Compte;
+import com.model.CompteB;
 import com.model.Operation;
+import com.model.Operationv;
 import com.util.ClientComparaison;
 import com.util.OperationCompartorByDate;
 
@@ -42,25 +44,27 @@ public class Dao implements Idao{
 
 	@Override
 	public void addCompte(Compte c, int idclient) {
-		// TODO Auto-generated method stub
+		
+		comptes.add(c);
 		
 	}
 
+	
 	@Override
-	public void addCompteE(int id, double solde, double decouvert, double taux) {
-		// TODO Auto-generated method stub
+	public void addCompteB(int id, double solde, double decouverte, Client client) {
+		Compte e=new CompteB(id,solde,decouverte,client);
 		
-	}
-
-	@Override
-	public void addCompteB(int id, double solde, double decouvert, int idclient) {
-		// TODO Auto-generated method stub
+		comptes.add(e);
 		
 	}
 
 	@Override
 	public void addOperationV(int id, Date date, double mnt, int idcompte) {
-		// TODO Auto-generated method stub
+		Operationv e=new Operationv();
+		e.setId(id);
+		e.setDate(date);
+		e.setMntv(mnt);
+		operations.add(e);
 		
 	}
 
@@ -86,6 +90,12 @@ public class Dao implements Idao{
 	public SortedSet<Operation> getoperations() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void addCompteE(int id, double solde, double decouvert, double taux, int idclient) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

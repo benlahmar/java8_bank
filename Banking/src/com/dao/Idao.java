@@ -18,8 +18,8 @@ public interface Idao {
 	
 	
 	public void addCompte(Compte c, int idclient);
-	public void addCompteE(int id,double solde,double decouvert,double taux int idclient);
-	public void addCompteB(int id,double solde,double decouvert, int idclient);
+	public void addCompteE(int id,double solde,double decouvert,double taux, int idclient);
+	public void addCompteB(int id,double solde,double decouvert, Client client);
 
 	
 	public void addOperationV(int id, Date date, double mnt, int idcompte);

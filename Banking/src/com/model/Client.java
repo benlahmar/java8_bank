@@ -1,6 +1,8 @@
 package com.model;
 
+import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,7 +10,19 @@ public class Client {
 
 	int id;
 	String nom,adresse;
+	LocalDate date;
 	
+	
+	
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
 	Set<Compte> comptes=new HashSet<>();
 
 	
@@ -94,9 +108,11 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", adresse=" + adresse + "]";
+		return "Client [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", date=" + date + ", comptes=" + comptes
+				+ "]";
 	}
 
+	
 	
 	
 	
